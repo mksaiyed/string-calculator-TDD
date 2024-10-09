@@ -15,4 +15,9 @@ describe("Test cases for string calculator", () => {
         expect(add("1,5")).toBe(6);
         expect(add("5,10,50")).toBe(65);
     });
+
+    test("4. Handle new line in input string", () => {
+        expect(add("1\n2,5")).toBe(8);
+        expect(add("5\n10\n50,1,1")).toBe(67);
+    });
 });

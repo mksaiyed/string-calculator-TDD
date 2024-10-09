@@ -11,8 +11,11 @@ function add(numberString) {
         return parseInt(numberString);
     }
 
-    // check for the multiple input seperated by comma
-    const numberArray = numberString.split(",");
+    /* check the below input scenarios
+        1. The multiple input seperated by comma
+        2. Handle new line in input string
+    */
+    const numberArray = numberString.split(/[\n,]/);
     const numberSum = numberArray.reduce((acc, current) => {
         return acc + parseInt(current);
     }, 0);
