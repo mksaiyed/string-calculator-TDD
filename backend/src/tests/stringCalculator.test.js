@@ -10,4 +10,9 @@ describe("Test cases for string calculator", () => {
         expect(add("5")).toBe(5);
         expect(add("k")).toBe(0);
     });
+
+    test("3. Should return sum of multiple input number seperated by comma", () => {
+        expect(add("1,5")).toBe(6);
+        expect(add("5,10,50")).toBe(65);
+    });
 });

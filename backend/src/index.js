@@ -10,6 +10,13 @@ function add(numberString) {
         if (isNaN(parseInt(numberString))) return 0;
         return parseInt(numberString);
     }
+
+    // check for the multiple input seperated by comma
+    const numberArray = numberString.split(",");
+    const numberSum = numberArray.reduce((acc, current) => {
+        return acc + parseInt(current);
+    }, 0);
+    return numberSum;
 }
 
 module.exports = { add };
