@@ -26,6 +26,7 @@ class StringCalculator {
             4. Handle negative numbers
             5. if number is greater than 1000 so ignore that number
             6. Handle delimiter of any length
+            7. Handle multiple delimiter of any length
         */
 
         // Default Delimiter
@@ -35,7 +36,11 @@ class StringCalculator {
             // Extract custom delimiter which is after //
             const newDelimiter = seperatedArray[0].slice(2);
             if (newDelimiter.startsWith("[") && newDelimiter.endsWith("]")) {
-                delimiter = new RegExp(`${newDelimiter.slice(1, -1)}`);
+                let delimiterParts = newDelimiter.match(/\[([^\]]+)\]/g);
+                const delimiters = delimiterParts.map((delimiter) =>
+                    delimiter.slice(1, -1)
+                );
+                delimiter = new RegExp(delimiters.join("|"));
             } else {
                 delimiter = new RegExp(`[${newDelimiter}]`);
             }

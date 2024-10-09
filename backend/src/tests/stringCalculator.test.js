@@ -67,4 +67,9 @@ describe("Test cases for string calculator", () => {
         expect(stringCalculator.add("//[;;;]\n1;;;2;;;1")).toBe(4);
         expect(stringCalculator.add("//[,,]\n5,,10,,15")).toBe(30);
     });
+
+    test("11. Handle multiple delimiters of any length", () => {
+        expect(stringCalculator.add("//[;][|]\n1;2|1")).toBe(4);
+        expect(stringCalculator.add("//[;;][,,]\n1;;2,,3")).toBe(6);
+    });
 });
