@@ -15,6 +15,7 @@ function add(numberString) {
         1. The multiple input seperated by comma
         2. Handle new line in input string
         3. Handle diffrent custom delimeters
+        4. Handle negative numbers
     */
 
     // Default Delimeter
@@ -26,6 +27,14 @@ function add(numberString) {
         numberString = seperatedArray[1];
     }
     const numberArray = numberString.split(delimeter);
+
+    // check negative numbers
+    const negativeNumber = numberArray.filter((num) => parseInt(num) < 0);
+    if (negativeNumber?.length) {
+        throw new Error(
+            `Negative number not allowed like ${negativeNumber[0]}`
+        );
+    }
     const numberSum = numberArray.reduce((acc, current) => {
         return acc + parseInt(current);
     }, 0);

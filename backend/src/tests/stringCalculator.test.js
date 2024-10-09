@@ -25,4 +25,13 @@ describe("Test cases for string calculator", () => {
         expect(add("//;\n2;4")).toBe(6);
         expect(add("//>\n5>10>20")).toBe(35);
     });
+
+    test("6. Handle negative number in the input string", () => {
+        expect(() => add("2,-4")).toThrow(
+            "Negative number not allowed like -4"
+        );
+        expect(() => add("1,-3,5")).toThrow(
+            "Negative number not allowed like -3"
+        );
+    });
 });
