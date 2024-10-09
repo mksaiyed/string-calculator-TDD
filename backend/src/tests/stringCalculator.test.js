@@ -27,11 +27,16 @@ describe("Test cases for string calculator", () => {
     });
 
     test("6. Handle negative number in the input string", () => {
-        expect(() => add("2,-4")).toThrow(
-            "Negative number not allowed like -4"
+        expect(() => add("2,-4")).toThrow("Negative numbers not allowed: -4");
+        expect(() => add("1,-3,5")).toThrow("Negative numbers not allowed: -3");
+    });
+
+    test("7. Handle multiple negative numbers in the input string", () => {
+        expect(() => add("-2,-4")).toThrow(
+            "Negative numbers not allowed: -2,-4"
         );
-        expect(() => add("1,-3,5")).toThrow(
-            "Negative number not allowed like -3"
+        expect(() => add("-1,3,-5")).toThrow(
+            "Negative numbers not allowed: -1,-5"
         );
     });
 });

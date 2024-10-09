@@ -29,10 +29,10 @@ function add(numberString) {
     const numberArray = numberString.split(delimeter);
 
     // check negative numbers
-    const negativeNumber = numberArray.filter((num) => parseInt(num) < 0);
-    if (negativeNumber?.length) {
+    const negativeNumbers = numberArray.filter((num) => parseInt(num) < 0);
+    if (negativeNumbers?.length) {
         throw new Error(
-            `Negative number not allowed like ${negativeNumber[0]}`
+            `Negative numbers not allowed: ${negativeNumbers.join(",")}`
         );
     }
     const numberSum = numberArray.reduce((acc, current) => {
