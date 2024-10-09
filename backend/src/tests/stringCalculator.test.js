@@ -57,4 +57,9 @@ describe("Test cases for string calculator", () => {
         stringCalculator.add("2,0");
         expect(stringCalculator.getAddFunctionCallCount()).toBe(3); // Three add() function call, should be 3
     });
+
+    test("9. Ignore number if it's greater than 1000", () => {
+        expect(stringCalculator.add("1001,1,1")).toBe(2);
+        expect(stringCalculator.add("//;\n1111;5;10")).toBe(15);
+    });
 });

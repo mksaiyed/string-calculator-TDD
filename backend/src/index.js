@@ -24,6 +24,7 @@ class StringCalculator {
             2. Handle new line in input string
             3. Handle diffrent custom delimeters
             4. Handle negative numbers
+            5. if number is greater than 1000 so ignore that number
         */
 
         // Default Delimeter
@@ -34,7 +35,7 @@ class StringCalculator {
             delimeter = new RegExp(`[${seperatedArray[0][2]}]`);
             numberString = seperatedArray[1];
         }
-        const numberArray = numberString.split(delimeter);
+        let numberArray = numberString.split(delimeter);
 
         // check negative numbers
         const negativeNumbers = numberArray.filter((num) => parseInt(num) < 0);
@@ -43,6 +44,7 @@ class StringCalculator {
                 `Negative numbers not allowed: ${negativeNumbers.join(",")}`
             );
         }
+        numberArray = numberArray.filter((num) => parseInt(num) <= 1000);
         const numberSum = numberArray.reduce((acc, current) => {
             return acc + parseInt(current);
         }, 0);
