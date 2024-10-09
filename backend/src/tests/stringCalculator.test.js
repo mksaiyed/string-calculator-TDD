@@ -20,4 +20,9 @@ describe("Test cases for string calculator", () => {
         expect(add("1\n2,5")).toBe(8);
         expect(add("5\n10\n50,1,1")).toBe(67);
     });
+
+    test("5. Handle new custom delimeter staring with // in input string", () => {
+        expect(add("//;\n2;4")).toBe(6);
+        expect(add("//>\n5>10>20")).toBe(35);
+    });
 });
