@@ -26,7 +26,7 @@ describe("Test cases for string calculator", () => {
         expect(stringCalculator.add("5\n10\n50,1,1")).toBe(67);
     });
 
-    test("5. Handle new custom delimeter staring with // in input string", () => {
+    test("5. Handle new custom delimiter staring with // in input string", () => {
         expect(stringCalculator.add("//;\n2;4")).toBe(6);
         expect(stringCalculator.add("//>\n5>10>20")).toBe(35);
     });
@@ -61,5 +61,10 @@ describe("Test cases for string calculator", () => {
     test("9. Ignore number if it's greater than 1000", () => {
         expect(stringCalculator.add("1001,1,1")).toBe(2);
         expect(stringCalculator.add("//;\n1111;5;10")).toBe(15);
+    });
+
+    test("10. Handle delimiters of any length", () => {
+        expect(stringCalculator.add("//[;;;]\n1;;;2;;;1")).toBe(4);
+        expect(stringCalculator.add("//[,,]\n5,,10,,15")).toBe(30);
     });
 });
