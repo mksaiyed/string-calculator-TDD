@@ -33,6 +33,13 @@ function App() {
                 />
                 <button onClick={handleAddButtonClick}>Add</button>
             </div>
+            <div className="resultText">
+                {error !== ""
+                    ? `Error: ${error}`
+                    : result !== ""
+                    ? `Result: ${result}`
+                    : ``}
+            </div>
         </>
     );
 }
