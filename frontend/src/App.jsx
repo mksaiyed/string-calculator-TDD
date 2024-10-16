@@ -1,15 +1,24 @@
 import React, { useState } from "react";
+import StringCalculator from "../../backend/src";
 import "./App.css";
 
 function App() {
     const [text, setText] = useState("");
+    const [result, setResult] = useState("");
+    const [error, setError] = useState("");
 
     const handleChange = (event) => {
         setText(event.target.value);
     };
 
     const handleAddButtonClick = () => {
-        // handle add button click functionality
+        const stringCalculator = new StringCalculator();
+        try {
+            const result = stringCalculator.add(text);
+            setResult(result);
+        } catch (error) {
+            setError(error);
+        }
     };
     return (
         <>
