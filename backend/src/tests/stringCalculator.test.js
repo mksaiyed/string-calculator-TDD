@@ -1,4 +1,4 @@
-const { StringCalculator } = require("../index");
+import StringCalculator from "..";
 
 describe("Test cases for string calculator", () => {
     let stringCalculator;

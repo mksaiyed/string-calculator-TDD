@@ -1,4 +1,4 @@
-class StringCalculator {
+export default class StringCalculator {
     constructor() {
         // track the number of times add() is called
         this.addFunctionCallCounter = 0;
@@ -66,5 +66,3 @@ class StringCalculator {
         return this.addFunctionCallCounter;
     }
 }
-
-module.exports = { StringCalculator };

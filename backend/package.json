@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "start": "nodemon --exec babel-node src/index.js"
     },
     "keywords": [],
     "author": "",
@@ -11,5 +12,11 @@
     "description": "",
     "dependencies": {
         "jest": "^29.7.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.25.8",
+        "@babel/node": "^7.25.7",
+        "@babel/preset-env": "^7.25.8",
+        "nodemon": "^3.1.7"
     }
 }
