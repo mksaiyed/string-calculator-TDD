@@ -9,6 +9,8 @@ function App() {
 
     const handleChange = (event) => {
         setText(event.target.value);
+        setResult("");
+        setError("");
     };
 
     const handleAddButtonClick = () => {
